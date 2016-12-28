@@ -7,6 +7,7 @@ module.exports = {
   entry: './src/script/coffee/application',
   output: {
     path: path.resolve('./build/webpack_bundles/'),
+    publicPath: '/assets/',
     filename: '[name].js'
   },
 
@@ -31,7 +32,11 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.coffee']
+    extensions: ['', '.js', '.coffee'],
+    alias: {
+      marionette: 'backbone.marionette',
+      underscore: 'lodash'
+    }
   }
 
 }
